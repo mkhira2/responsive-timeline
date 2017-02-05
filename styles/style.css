@@ -1,12 +1,25 @@
+/*------------------------------
+ALWAYS INCLUDE
+------------------------------*/
+
+
+
 * {
   box-sizing: border-box;
 }
+
+
+
+/*------------------------------
+BASIC SETUP
+------------------------------*/
+
+
 
 .container {
   width: 80%;
   margin: 0 auto;
   padding-top: 20px;
-  
 }
 
 .row1, .row2, .row3 {
@@ -20,12 +33,10 @@
 
 .left {
   width: 20%;
-  
 }
 
 .middle {
   width: 10%;
- 
 }
 
 .right {
@@ -68,6 +79,18 @@
   padding: 5px;
 }
 
+/*adding vertical line*/
+.middle:after {
+  content: ' ';
+  position: absolute;
+  width: 5px;
+  height: 300px;
+  left: 47%;
+  z-index: -1;
+  background-color: #CEE3F8;
+}
+
+/*adding border to vertical line*/
 .middle:before {
   content: ' ';
   position: absolute;
@@ -79,16 +102,7 @@
   transform: translate(-7px,-8px);
 }
 
-.middle:after {
-  content: ' ';
-  position: absolute;
-  width: 5px;
-  height: 300px;
-  left: 47%;
-  z-index: -1;
-  background-color: #CEE3F8;
-}
-
+/*moving position of notch*/
 .right:after {
   content: ' ';
   position: absolute;
@@ -100,12 +114,22 @@
   background-color: #6CB0DE;
 }
 
+
+
+/*------------------------------
+MEDIA QUERIES
+------------------------------*/
+
+
+
+/*decrease time font size*/
 @media (max-width: 950px) {
   .time {
     font-size: 18px;
   }
 }
 
+/*move multimedia icons to top-right of rows*/
 @media (max-width: 750px) {
   
   .left {
